@@ -3,12 +3,11 @@ import './style.css';
 
 // Write Javascript code!
 const appDiv = document.getElementById('app');
-const appBtn = document.getElementById('bttn');
 
 //creating objects
 //2 ways : obj cnstructor or obj literal syntax
 
-//obj literal
+////////////////obj literal////////////////
 let a = {
   field1: 'stringOne',
   field12: 15,
@@ -22,3 +21,16 @@ let a = {
 
 // alert(bag.apple); // 5 if fruit="apple"
 // console.log(a);
+
+//////////////obj constructor///////////////////
+
+function Task(taskHeader, deadLine) {
+  return {
+    taskHeader,
+    deadLine,
+  };
+}
+
+let task = new Task('task1', new Date().toLocaleTimeString());
+
+console.log(task);
