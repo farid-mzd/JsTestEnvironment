@@ -24,13 +24,93 @@ let a = {
 
 //////////////obj constructor///////////////////
 
-function Task(taskHeader, deadLine) {
+// function Task(taskHeader, deadLine) {
+//   let date = ('0' + deadLine.getDate()).slice(-2);
+
+//   let month = ('0' + (deadLine.getMonth() + 1)).slice(-2);
+
+//   let year = deadLine.getFullYear();
+
+//   let x = year + '-' + month + '-' + date;
+
+//   return (
+//    obj =  {
+//     taskHeader,
+//     `${year + month + date}`,
+//   }
+//     )
+// }
+
+function MakeUser(Name, dateOfBirth) {
+  let year = new Date().getFullYear();
+
+  let age = year - dateOfBirth.getFullYear() - 1;
+
+  return Name + age;
+}
+
+// function Fruit(color, taste, seeds) {
+//   this.color = color;
+//   this.taste = taste;
+//   this.seeds = seeds;
+// }
+
+function Fruit(color, taste, seeds) {
+  let obj = {
+    color,
+    taste,
+    seeds,
+  };
+  return obj;
+}
+
+// let user = MakeUser('Fərid', new Date(2000, 11, 23));
+
+// let fruit = new Fruit('red', 'salty', 17);
+
+// console.log(fruit.color);
+
+// function Car() {}
+// let car1 = Car();
+// let car2 = Car();
+
+// //  console.log(car1.color);    // undefined
+
+// Car.prototype.color = 'original color';
+// console.log(car1.color);    // 'original color'
+
+// car1.color = 'black';
+// console.log(car1.color);    // 'black'
+
+// console.log(Object.getPrototypeOf(car1).color); // 'original color'
+// console.log(Object.getPrototypeOf(car2).color); // 'original color'
+// console.log(car1.color);   // 'black'
+// console.log(car2.color);   // 'original color'
+
+function Car1(make, model, year) {
+  this.make = make;
+  this.model = model;
+  this.year = year;
+}
+
+function Car2(make, model, year) {
+  let make1 = make;
+  let model1 = model;
+  let year1 = year;
+
   return {
-    taskHeader,
-    deadLine,
+    make,
+    model,
+    year,
   };
 }
 
-let task = new Task('task1', new Date().toLocaleTimeString());
+var myCar = new Car1('Eagle', 'Talon TSi', 1993);
 
-console.log(task);
+var myCar2 = new Car2('Eagle', 'Talon TSi', 1993);
+
+var myCar2_1 = Car2('Eagle', 'Talon TSi', 1993);
+
+Car2.prototype.modelOther = 'fsdsfs';
+
+console.log(myCar2.modelOther);
