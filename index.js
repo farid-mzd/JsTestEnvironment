@@ -115,14 +115,12 @@ import './style.css';
 
 // console.log(myCar2.modelOther);
 
-
 // let firstObj =(prop1,prop2,prop3) => {
 //   prop1,
 //   prop2,
 //   prop3
 
 // };
-
 
 // let firstObj =(prop1 = 15,prop2,prop3) => {
 //   prop1,
@@ -142,7 +140,6 @@ import './style.css';
 
 // console.log(firstObj.prop1);
 
-
 // function Book(type, author) {
 //   this.type = type;
 //   this.author = author;
@@ -151,19 +148,33 @@ import './style.css';
 //   }
 // }
 
+// function Book(type, author) {
+//  this.type = type;
+//   this.getDetails = function () {
+//       return type + " written by " + author;
+//   }
+// }
 
-function Book(type, author) {
- this.type = type;
-  this.getDetails = function () {
-      return type + " written by " + author;
+// var book = new Book("Fiction", "Peter King");
+
+// var divisor = parseInt(50 / 2, 10);
+
+// console.log(divisor);
+
+class User {
+  constructor(name) {
+    this.name = name;
+  }
+  sayHi() {
+    alert(this.name);
   }
 }
 
-var book = new Book("Fiction", "Peter King");
+function UserFunc(name) {
+  this.name = name;
+}
 
-var divisor = parseInt(50 / 2, 10);
-
-
-console.log(divisor); 
-
+console.log(User.prototype.sayHi);
+console.log(User.prototype.constructor);
+console.log(UserFunc.prototype.constructor);
 
